@@ -42,30 +42,31 @@ describe("myRange(min, max, step)", () => {
   context("if step is not provided", () => {
     it("should return the correct array with default value step=1", () => {
       //Arrange
-
+      let res=myRange(1,3)
       //Act
+      let expected=[1,2,3]
 
       // Assert
-      expect.fail("Remove this expect.fail and replace it with your test");
+      expect(res).to.eql(expected);
     });
   });
   context("if step is provided", () => {
     it("should return the correct array", () => {
       //Arrange
-
+      let res=myRange(1,4,2)
       //Act
-
+      let expected=[1,3]
       // Assert
-      expect.fail("Remove this expect.fail and replace it with your test");
+      expect(res).to.eql(expected);
     });
   });
   it("should throw an error if num is not type of Number", () => {
     //Arrange
-
+    
     //Act
 
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(()=>myRange('hi', 'hello','bye')).to.throw(Error);
   });
 });
 describe("fizzBuzz(max)", () => {
@@ -75,7 +76,7 @@ describe("fizzBuzz(max)", () => {
     //Act
 
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(()=>fizzBuzz(-2)).to.throw(RangeError);
   });
   it("should throw a TypeError if max is not a number", () => {
     //Arrange
@@ -83,14 +84,15 @@ describe("fizzBuzz(max)", () => {
     //Act
 
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(()=>fizzBuzz('hellooooo')).to.throw(TypeError);
   });
   it("should return an array from 0 to max (not inclusive) of numbers that are divisible by either 3 or 5 but not both", () => {
     //Arrange
-
+    let num=16;
+    let res=fizzBuzz(num);
     //Act
-
+    let expected=[3, 5, 6, 9, 10, 12 ]
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(res).to.eql(expected);
   });
 });
