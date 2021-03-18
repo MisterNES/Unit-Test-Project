@@ -37,9 +37,7 @@ function hiddenCounter(count = 0) {
   };
 }
 
-let counter = hiddenCounter();
-let res = counter();
-console.log(res);
+
 
 /*
 3. myMap
@@ -53,9 +51,11 @@ Do not use the built in Array#map - use Array#forEach for iteration.
 const myMap = (array, cb) => {
   let mapped = [];
 
-  array.forEach((el) => mapped.push(el));
+  array.forEach((el) => mapped.push(cb(el)));
   return mapped;
 };
+
+
 
 /*
 4. AvgValue
@@ -64,9 +64,12 @@ array of numbers and returns the average number. Assign the below function to a
 variable using the const keyword.
 */
 const avgValue = (array) => {
-  let sum = array.reduce((el, sum = 0) => (sum += el));
+  let sum = array.reduce((accu,ele)=>{
+    return accu+ele
+  });
 
-  let avg = sum / array.length - 1;
+  let avg = sum / array.length;
+
   return avg;
 };
 

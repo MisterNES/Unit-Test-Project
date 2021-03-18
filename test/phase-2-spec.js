@@ -34,32 +34,32 @@ describe('hiddenCounter()', function () {
 describe('myMap', function () {
  it("should function like the built in Array#map", function () {
     //Arrange
-
+    let res=myMap([1,2,3], function(num){return num*2})
     //Act
 
     //Assert
-   expect.fail('Remove this expect.fail and replace it with your test');
+   expect(res).to.eql([2,4,6]);
   });
 
   it("should not call the built in Array#map", function () {
      //Arrange
-
+    const myMapSpy=chai.spy.on(myMap,'array.map')
     //Act
 
     //Assert
-
+    expect(myMapSpy).to.have.not.been.called;
   });
 })
 
 //4. avgValue
 describe('avgValue', function () {
   it('should return the average of an array of numbers', function () {
-     //Arrange
-
+    //Arrange
+    let res=avgValue([1,2,3])
     //Act
-
+    let expected=2
     //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
+    expect(res).to.equal(expected);
 
   })
 })
